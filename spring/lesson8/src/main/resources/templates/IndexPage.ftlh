@@ -3,8 +3,7 @@
 <#import "common.ftlh" as c>
 
 <@c.page>
-    <#if message??>
-        ${message}
-    </#if>
-
+    <#list posts as post>
+        <@c.post post/>
+    </#list>
 </@c.page>

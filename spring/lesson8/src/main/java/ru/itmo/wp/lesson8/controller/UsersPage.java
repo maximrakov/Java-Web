@@ -6,7 +6,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import ru.itmo.wp.lesson8.domain.Role;
 import ru.itmo.wp.lesson8.form.PersonCredentials;
+import ru.itmo.wp.lesson8.security.AnyRole;
 import ru.itmo.wp.lesson8.service.PersonService;
 
 import javax.validation.Valid;
@@ -20,6 +22,7 @@ public class UsersPage extends Page{
         this.persoService = persoService;
     }
 
+    @AnyRole(Role.Name.ADMIN)
     @GetMapping("/users")
     public String users(Model model){
         model.addAttribute("persons", persoService.findAll());

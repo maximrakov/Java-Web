@@ -34,7 +34,7 @@ public class Page {
     }
 
     @ModelAttribute("person")
-    Person getUser(HttpSession httpSession) {
+    public Person getUser(HttpSession httpSession) {
         Object userId = httpSession.getAttribute(USER_ID_SESSION_KEY);
         if(userId == null){
             return null;
@@ -48,7 +48,7 @@ public class Page {
     }
 
     @SuppressWarnings("SameParameterValue")
-    void setMessage(HttpSession httpSession, String message){
+    public void setMessage(HttpSession httpSession, String message){
         httpSession.setAttribute(MESSAGE_SESSION_KEY, message);
     }
 

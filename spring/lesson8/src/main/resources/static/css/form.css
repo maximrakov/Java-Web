@@ -3,6 +3,7 @@
     border-top-right-radius: var(--border-radius);
     border-top-left-radius: var(--border-radius);
     width: 30rem;
+    height: 15rem;
     margin: 0 auto;
 }
 
@@ -53,5 +54,56 @@
 .form-box .error {
     color: red;
     /*top: 2rem;*/
+    clear: both;
+}
+
+
+.form {
+    width: 40rem;
+}
+
+.form .header {
+    color: var(--caption-color);
+    font-weight: bold;
+}
+
+.form .field {
+    margin: 1.5rem 0;
+}
+
+.form .field .name {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.form .field .value {
+    width: 35rem;
+}
+
+.form .field input{
+    width: 100%;
+}
+.form .field textarea{
+    width: 100%;
+    height: 10rem;
+}
+
+.form .button-field {
+    margin: 1.5rem 1.5rem 1.5rem 12rem;
+}
+
+.form .button-field input {
+    padding: 0.1rem 1.5rem;
+}
+
+.form .error {
+    color: var(--error-color);
+    margin-left: 12rem;
+    position: relative;
+    top: -1rem;
+}
+.form .error {
+    color: red;
+    top: 2rem;
     clear: both;
 }

@@ -7,6 +7,7 @@
         <div class="error">${spring.status.errorMessage}</div>
     </#if>
 </#macro>
+
 <@c.page>
 <div class="form-box">
     <div class="header">Register</div>

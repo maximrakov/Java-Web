@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import ru.itmo.wp.lesson8.form.PersonCredentials;
+import ru.itmo.wp.lesson8.security.Guest;
 import ru.itmo.wp.lesson8.service.PersonService;
 import ru.itmo.wp.lesson8.validator.PersonCredentialsRegisterValidator;
 

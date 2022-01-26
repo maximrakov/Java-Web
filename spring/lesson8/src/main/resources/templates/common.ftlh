@@ -29,6 +29,8 @@
             <#if person??>
                 <li><a href="/users">Users</a></li>
                 <li><a href="/article">Articles</a></li>
+                <li> <a href="/writePost">Write Post</a></li>
+                <li> <a href="/MyPosts">My posts</a></li>
             </#if>
         </ul>
     </nav>
@@ -68,4 +70,41 @@
 </script>
 </body>
 </html>
+</#macro>
+
+<#macro post post>
+    <article>
+        <div class="title">${post.title}</div>
+        <div class="information">By ${post.person.login},  ${post.creationTime} </div>
+        <div class="tags">
+            <#list post.tags as tag>
+                ${"#"}${tag.name}${" "}
+            </#list>
+        </div>
+        <div class="body">
+            ${post.text}
+        </div>
+        <div class="footer">
+            <div class="left">
+                <img src="img/voteup.png" title="Vote Up" alt="Vote Up"/>
+                <span class="positive-score">+173</span>
+                <img src="img/votedown.png" title="Vote Down" alt="Vote Down"/>
+            </div>
+            <div class="right">
+                <img src="img/date_16x16.png" title="Publish Time" alt="Publish Time"/>
+                ${post.creationTime}
+                <img src="img/comments_16x16.png" title="Comments" alt="Comments"/>
+                <a href="#">68</a>
+            </div>
+        </div>
+    </article>
+</#macro>
+
+<#macro comment comment>
+    <article>
+        <div class="title">${comment.person.login}</div>
+        <div class="body">
+            ${comment.text}
+        </div>
+    </article>
 </#macro>

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import ru.itmo.wp.lesson8.domain.Person;
 import ru.itmo.wp.lesson8.form.PersonCredentials;
+import ru.itmo.wp.lesson8.security.Guest;
 import ru.itmo.wp.lesson8.service.PersonService;
 
 import javax.servlet.http.HttpSession;
@@ -20,11 +21,15 @@ public class EnterPage extends Page{
     public EnterPage(PersonService personService) {
         this.personService = personService;
     }
+
+//    @Guest
     @GetMapping("/enter")
     public String enterGet(Model model) {
         model.addAttribute("registerForm", new PersonCredentials());
         return "EnterPage";
     }
+
+    //@Guest
     @PostMapping("/enter")
     public String enterPost(@Valid @ModelAttribute("registerForm") PersonCredentials registerForm,
                             BindingResult bindingResult, HttpSession httpSession) {
